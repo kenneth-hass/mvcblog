@@ -1,0 +1,55 @@
+<head>
+    <title>MVC Blog</title>
+</head>
+<body>
+    <h1 class="textCenter my-4">Create A Post</h1>
+
+    <form class="container" id="createBlogForm">
+
+        <div class="mb-3">
+
+            <label for="blog-title" class="blogLabel">New Blog Post</label>
+
+            <input type="text" id="blogTitle" class="formControl" required>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label for="blogDescription" class="formLabel">Blog Description</label>
+
+            <textarea name="blogDescription" id="blogDescription" class="formControl" rows="5" required></textarea>
+        
+        </div>
+
+        <div class="textCenter"></div>
+
+        <button type="submit" class="btn btnPrimary">Create Blog</button>
+
+    </form>
+
+    <div id="errorMessage" class="text-danger mt-3 d-none"></div>
+
+    <h1 class="text-center my-4">Blogs</h1>
+
+    <div class="container mt-4">
+
+        {{#if blogs.length}}
+
+        {{#each blogs}}
+
+        <div class="card mb-4">
+
+            <div class="cardHeader bg-white text-black d-flex justify-content-between align-items-center">
+
+                <h5 class="cardTitle mb-0"{{title}}></h5>
+
+                <button class="btn btnSmall btnSuccess editBlogBtn" data-blog-id{{id}}>Edit</button>
+
+                <button class="btn btnSmall btnDanger deleteBlog" data-blog-id{{id}}>Delete</button>
+
+                <a href="/home" class="btn btnSmall btnsecondary">Cancel</a>
+            </div>
+
+    <script src="../../public/blog.js"></script>
+</body>
